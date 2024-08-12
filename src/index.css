@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .banner,
+  .dashboard {
+    padding: 10px;
+    max-width: 100%;
+    margin: 20px;
+  }
+
+  .banner p,
+  .banner a,
+  .dashboard h2,
+  .dashboard label,
+  .dashboard button {
+    font-size: 0.9em;
+  }
+
+  .banner .timer {
+    font-size: 1.2em;
+  }
+}
