@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="header-container">
-          <p>Your banner, your way: customize descriptions, countdowns, and links with ease!</p>
+          <p>Effortless Banner Control at Your Fingertips!</p>
         </div>
       </header>
       <main className="App-main">
@@ -15,7 +15,7 @@ function App() {
       </main>
       <footer className="App-footer">
         <div className="footer-container">
-          <p>&copy; 2024 Yochana Lam. All rights reserved.</p>
+          <p>&copy; 2024 Prashanth Reddy. All rights reserved.</p>
         </div>
       </footer>
     </div>

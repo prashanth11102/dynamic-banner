@@ -6,16 +6,18 @@
 }
 
 .App-header, .App-footer {
-  background-color: #4b5058;
+  background-color: #000000;
   color: white;
   padding: 10px 20px; /* Reduced padding for a smaller box */
   text-align: center;
 }
-
+.header-container{
+  margin-bottom: -10px;
+}
 .header-container, .footer-container {
   max-width: 1000px; /* Reduce max-width to match a smaller layout */
   margin: 0 auto;
-  padding: 3px 0; /* Reduced internal padding */
+  padding: 3px 0;
 }
 
 

@@ -11,12 +11,8 @@ const Dashboard = ({ onUpdateBanner }) => {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleToggleVisibility = () => {
-    setFormData({ ...formData, isVisible: !formData.isVisible });
+    const { name, value, type, checked } = e.target;
+    setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value });
   };
 
   const handleSubmit = (e) => {
@@ -60,25 +56,19 @@ const Dashboard = ({ onUpdateBanner }) => {
             onChange={handleChange}
           />
         </label>
-        <div className="visibility-container">
-          <label>
-            Banner Visibility
-            <input
-              type="checkbox"
-              checked={formData.isVisible}
-              onChange={handleToggleVisibility}
-            />
-            <span>{formData.isVisible ? 'Hide' : 'Show'}</span>
-          </label>
+        <div className="banner-visibility">
+          <label htmlFor="isVisible">Banner Visibility</label>
+          <input
+            type="checkbox"
+            name="isVisible"
+            id="isVisible"
+            checked={formData.isVisible}
+            onChange={handleChange}
+          />
+          <span>{formData.isVisible ? 'Show' : 'Hide'}</span>
         </div>
         <button type="submit">Update Banner</button>
       </form>
-      <div className="animation-container">
-        <div className="cube"></div>
-        <div className="cube"></div>
-        <div className="cube"></div>
-        <div className="cube"></div>
-      </div>
     </div>
   );
 };
