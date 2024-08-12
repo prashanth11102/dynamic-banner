@@ -32,7 +32,6 @@ const Dashboard = ({ onUpdateBanner }) => {
 
   return (
     <div className="dashboard">
-      <div className="background-animation"></div>
       <h2>Banner Dashboard</h2>
       <form onSubmit={handleSubmit}>
         <label>
@@ -61,17 +60,25 @@ const Dashboard = ({ onUpdateBanner }) => {
             onChange={handleChange}
           />
         </label>
-        <div className="banner-visibility">
-          <label>Banner Visibility</label>
-          <input
-            type="checkbox"
-            checked={formData.isVisible}
-            onChange={handleToggleVisibility}
-          />
-          <span>{formData.isVisible ? 'Hide' : 'Show'}</span>
+        <div className="visibility-container">
+          <label>
+            Banner Visibility
+            <input
+              type="checkbox"
+              checked={formData.isVisible}
+              onChange={handleToggleVisibility}
+            />
+            <span>{formData.isVisible ? 'Hide' : 'Show'}</span>
+          </label>
         </div>
         <button type="submit">Update Banner</button>
       </form>
+      <div className="animation-container">
+        <div className="cube"></div>
+        <div className="cube"></div>
+        <div className="cube"></div>
+        <div className="cube"></div>
+      </div>
     </div>
   );
 };
