@@ -1,26 +1,40 @@
 .banner {
-  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  background: linear-gradient(135deg, #4b6cb7, #182848); /* New background color */
   color: #fff;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 0px 20px; /* Smaller padding */
+  border-radius: 6px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
+  text-align: left;
   animation: slideDown 0.5s ease-in-out;
-  max-width: 700px;
-  margin: 30px auto;
+  max-width: 600px; /* Reduced width */
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.banner-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner p {
+  margin: 0;
+  font-size: 1em; /* Slightly smaller text */
+  line-height: 1.4;
 }
 
 .banner a {
   color: #ffe600;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 16px;
+  padding: 0x 0px; /* Smaller padding */
   background-color: rgba(255, 230, 0, 0.2);
   border-radius: 4px;
   transition: background-color 0.3s, transform 0.3s;
+  margin-left: 10px; /* Space between text and link */
 }
 
 .banner a:hover {
@@ -28,25 +42,28 @@
   transform: scale(1.05);
 }
 
-.banner p {
-  margin: 0;
-  font-size: 1.2em;
-  line-height: 1.5;
-}
-
 .banner .timer {
-  font-size: 1.5em;
+  font-size: 1.2em; /* Smaller timer text */
   font-weight: bold;
-  color: #121111;
-  padding: 8px 16px;
+  color: #fff;
+  padding: 6px 12px;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.3);
-  margin-top: 10px;
-  transition: background-color 0.3s;
+  margin-left: 10px;
 }
 
-.banner .timer:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+.banner .close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.3s;
+}
+
+.banner .close-btn:hover {
+  color: #ffdddd;
 }
 
 @keyframes slideDown {

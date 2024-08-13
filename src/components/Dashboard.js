@@ -10,6 +10,8 @@ const Dashboard = ({ onUpdateBanner }) => {
     isVisible: false,
   });
 
+  const { description, link, timer, isVisible } = formData;
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value });
@@ -23,7 +25,7 @@ const Dashboard = ({ onUpdateBanner }) => {
         onUpdateBanner(formData);
         alert('Banner updated successfully!');
       })
-      .catch((error) => console.error('Error updating banner', error));
+      .catch((error) => alert('Error updating banner', error));
   };
 
   return (
@@ -33,8 +35,10 @@ const Dashboard = ({ onUpdateBanner }) => {
         <label>
           Banner Description:
           <textarea
+            className="banner-description"
             name="description"
-            value={formData.description}
+            placeholder="Enter banner description"
+            value={description}
             onChange={handleChange}
           />
         </label>
@@ -42,8 +46,10 @@ const Dashboard = ({ onUpdateBanner }) => {
           Banner Link:
           <input
             type="text"
+            className="banner-link"
             name="link"
-            value={formData.link}
+            placeholder="Enter banner link"
+            value={link}
             onChange={handleChange}
           />
         </label>
@@ -51,8 +57,11 @@ const Dashboard = ({ onUpdateBanner }) => {
           Banner Timer (seconds):
           <input
             type="number"
+            className="banner-timer"
             name="timer"
-            value={formData.timer}
+            min="1"
+            placeholder="Enter timer in seconds"
+            value={timer}
             onChange={handleChange}
           />
         </label>
@@ -62,10 +71,10 @@ const Dashboard = ({ onUpdateBanner }) => {
             type="checkbox"
             name="isVisible"
             id="isVisible"
-            checked={formData.isVisible}
+            checked={isVisible}
             onChange={handleChange}
           />
-          <span>{formData.isVisible ? 'Show' : 'Hide'}</span>
+          <span>{isVisible ? 'Show' : 'Hide'}</span>
         </div>
         <button type="submit">Update Banner</button>
       </form>

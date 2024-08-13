@@ -5,36 +5,61 @@
   background-color: #f0f2f5;
 }
 
-.App-header, .App-footer {
+.App-header,
+.App-footer {
   background-color: #000000;
-  color: white;
-  padding: 10px 20px; /* Reduced padding for a smaller box */
+  color: #ffffff;
+  padding: 10px 20px;
   text-align: center;
 }
-.header-container{
-  margin-bottom: -10px;
-}
-.header-container, .footer-container {
-  max-width: 1000px; /* Reduce max-width to match a smaller layout */
+
+.header-container,
+.footer-container {
+  max-width: 1000px;
   margin: 0 auto;
   padding: 3px 0;
 }
 
-
-
 .App-header p {
-  font-size: 1.1em;
-  margin: 0.3em 0;
+  font-size: 1.2em; /* Increased font size */
+  line-height: 1.4; /* Increased line height */
+  margin: 0.5em 0; /* Adjusted margin */
 }
 
 .App-main {
   flex: 1;
-  padding: 15px 20px; /* Reduced padding */
+  padding: 20px 25px; /* Adjusted padding */
   background-color: #f8f9fa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
 }
 
 footer p {
   margin: 0;
-  font-size: 0.8em; /* Smaller font size for footer text */
-  padding: 2px 0px;
+  font-size: 0.85em; /* Slightly increased font size */
+  padding: 4px 0;
+  color: #b0b0b0; /* Adjusted color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App-header p,
+  footer p {
+    font-size: 1em; /* Reduced font size */
+  }
+
+  .App-main {
+    padding: 15px; /* Reduced padding for smaller screens */
+  }
+
+  .header-container,
+  .footer-container {
+    padding: 2px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header p,
+  footer p {
+    font-size: 0.9em; /* Further reduced font size */
+  }
 }

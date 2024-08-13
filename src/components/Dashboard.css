@@ -1,12 +1,11 @@
 .dashboard {
   padding: 20px;
-  
   background: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.5s ease-in;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 @keyframes fadeIn {
@@ -25,9 +24,9 @@ label {
   color: #555;
 }
 
-textarea,
-input[type="text"],
-input[type="number"] {
+textarea.banner-description,
+input.banner-link,
+input.banner-timer {
   width: 100%;
   padding: 10px;
   margin: 5px 0 15px;
@@ -37,8 +36,9 @@ input[type="number"] {
   transition: border-color 0.3s;
 }
 
-textarea:focus,
-input:focus {
+textarea.banner-description:focus,
+input.banner-link:focus,
+input.banner-timer:focus {
   border-color: #0088cc;
   outline: none;
 }
@@ -51,6 +51,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-top: 20px;
 }
 
 button:hover {

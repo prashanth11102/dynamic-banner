@@ -1,38 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import Banner from '../components/Banner';
 import Dashboard from '../components/Dashboard';
-import './Home.css'; // Ensure to create this CSS file for styling
+import './Home.css';
 
 const Home = () => {
   const [bannerData, setBannerData] = useState({
-    description: '',
+    description: 'Welcome to our site!',
     link: '',
     timer: 10,
-    isVisible: false,
+    isVisible: true,
   });
 
-  useEffect(() => {
-    axios.get('/api/banner')
-      .then((response) => setBannerData(response.data))
-      .catch((error) => console.error('Error fetching banner data', error));
-  }, []);
-
-  const handleBannerClose = () => {
-    setBannerData({ ...bannerData, isVisible: false });
+  const handleBannerUpdate = (newBannerData) => {
+    setBannerData(newBannerData);
   };
 
   return (
-    <div className="home-container">
-      {bannerData.isVisible && (
-        <Banner
-          description={bannerData.description}
-          link={bannerData.link}
-          timer={bannerData.timer}
-          onClose={handleBannerClose}
-        />
-      )}
-      <Dashboard onUpdateBanner={setBannerData} />
+    <div className="home">
+      <Banner
+        description={bannerData.description}
+        link={bannerData.link}
+        timer={bannerData.timer}
+        isVisible={bannerData.isVisible}
+        onClose={() => setBannerData({ ...bannerData, isVisible: false })}
+      />
+      <Dashboard onUpdateBanner={handleBannerUpdate} />
     </div>
   );
 };
